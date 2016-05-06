@@ -60,6 +60,7 @@ Carry Score = 3 * P3
 Quite possibly! There is only so much data that is available. Your stats (wins, losses, penta kills, etc.) are only calculated for ranked games and for this season. You may have also played champions before Riot implemented the Mastery system - in which case your profile may not have any mastery data associated.
 
 ## Features Behind the Scenes
+- Error catching and error reporting
 - Implemented a server API (just for this website) to convienently access data, provide scalability and versioning, and keep keys and database info secure
 - Using Angluar JS and Bootstrap frameworks
 - Clean and documented code
