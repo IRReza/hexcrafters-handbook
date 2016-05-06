@@ -42,7 +42,7 @@ To get a perfect score with a champion (which, by the way, is hidden anyhow... a
 
 The "get carried" section is purely based on your win percentage.
 
-### The Math
+### The math
 P1 = Linear interpolation between 30% and 70% win rate to a score between 0 and 10, capped at 0 and 10
 
 P2 = Sum of the number of multikills / games_played * difficulty_factor, capped between 0 and 3 (total of 3 points). The difficulty factors determine the number of games between when you'd get each multikill (6 games for penta kill, 4 for quadra, 2 for triple).
