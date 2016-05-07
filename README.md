@@ -5,11 +5,15 @@ Hexcrafters Handbook is a website tool for League of Legends' Hextech Crafting, 
 A live demo is the best way to understand what the site does. Check it out here at http://hexcrafter.ga
 
 ## Overview
-Use this tool to check up on where you're at with chests and see which champions you should play to rack up those chests. It provides stats on: 
+Welcome to the Hexcrafter's Handbook!
+
+"Hit that big juicy red button below and we'll hook you up with your Hextech Crafting stats. We'll let you know how many chests you're on track for getting by the end of the season and the best champions you should play to get those chests."
+
+The app provides stats for summoners including:
 
 - How many chests you've earned this season,
-- The max chests available to earn this season,
-- How many chests you're on track to get this season, and 
+- The max chests available to earn this season (with a progess bar of earned chests out of max),
+- How many chests you're on track to get by the end of this season, and 
 - Your total champion mastery level.
 
 The heart of the application, athough, is the champion section. Here, we analyze your stats and mastery data to detemine the best champions for you to play if you want to earn chests. We group in a couple categories: 
@@ -21,10 +25,13 @@ The heart of the application, athough, is the champion section. Here, we analyze
 
 Also, you're able to see your best mastery level with each champ.
 
+I've found this to be a great tool for when you're in champ select and you want to chose a champ to play that you haven't earned a chest already for (because you can't look at your profile when in champ select). On top of that, you can look at which champs you've got the best shot at and filter it by position.
+
 ## Additional Features
 Additional features include:
 - Progress bar showing earned chests/max chests
 - Tracking of available chests
+- Filter your best champs to play by position (useful when you're in draft mode)
 - Regional search support
 - Error reporting
 - A sleek website design
