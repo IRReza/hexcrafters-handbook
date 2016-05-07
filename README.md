@@ -88,6 +88,7 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 - If an error occured (eg. the summoner does not exist), it is shown to the user instead
 
 ### Some of the Logic
+```
 for each champ
     initialize points
     group = unplayed
@@ -106,3 +107,4 @@ for each champ
     
     sum points
     sort into group
+```
