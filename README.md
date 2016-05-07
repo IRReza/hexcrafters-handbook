@@ -34,6 +34,7 @@ Additional features include:
 - Filter your best champs to play by position (useful when you're in draft mode)
 - Regional search support
 - Error reporting
+- Flexible updates (static champion and position data in JSON files)
 - A sleek website design
 - A FAQ on the website and earning chests/keys
 
