@@ -86,3 +86,23 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 - A JSON response is prepared and returned to the javascript code that requested it
 - The data is parsed and injected into the HTML via Angular
 - If an error occured (eg. the summoner does not exist), it is shown to the user instead
+
+### Some of the Logic
+for each champ
+    initialize points
+    group = unplayed
+    if stats data:
+        group = perspective
+        get points.stats_winPercent
+        get points.stats_multiKills
+    
+    if mastery data:
+        group = perspective
+        if chest:
+            group = earned
+        if highestGrade exists:
+            get points.mastery_highestGrade
+        get points.mastery_level
+    
+    sum points
+    sort into group
