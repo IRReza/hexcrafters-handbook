@@ -12,20 +12,20 @@ Welcome to the Hexcrafter's Handbook!
 The app provides stats for summoners including:
 
 - How many chests you've earned this season,
-- The max chests available to earn this season (with a progess bar of earned chests out of max),
+- The max chests available to earn this season (with a progress bar of earned chests out of max),
 - How many chests you're on track to get by the end of this season, and 
 - Your total champion mastery level.
 
-The heart of the application, athough, is the champion section. Here, we analyze your stats and mastery data to detemine the best champions for you to play if you want to earn chests. We group in a couple categories: 
+The heart of the application, although, is the champion section. Here, we analyze your stats and mastery data to determine the best champions for you to play if you want to earn chests. We group in a couple categories: 
 
 - Champions you have the best chance of getting a chest with by earning a "S" yourself
 - Champions you have the best chance to get a chest with if you're friend in your party is likely to get the "S" for you
 - Champions you've already earned chests for
-- Champions that have no ranked stats or mastery data (possibly havent played)
+- Champions that have no ranked stats or mastery data (possibly haven’t played)
 
 Also, you're able to see your best mastery level with each champ.
 
-I've found this to be a great tool for when you're in champ select and you want to chose a champ to play that you haven't earned a chest already for (because you can't look at your profile when in champ select). On top of that, you can look at which champs you've got the best shot at and filter it by position.
+I've found this to be a great tool for when you're in champ select and you want to choose a champ to play that you haven't earned a chest already for (because you can't look at your profile when in champ select). On top of that, you can look at which champs you've got the best shot at and filter it by position.
 
 ## Additional Features
 Additional features include:
@@ -68,12 +68,12 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 
 ## Features Behind the Scenes
 - Error catching and error reporting
-- Using Angluar JS and Bootstrap frameworks
+- Using Angular JS and Bootstrap frameworks
 - AJAX loading, single-page design, and clean URLs
 - My best attempt at good-practices OOP, clean and documented code
 
 ## What Happens When Someone Uses the Site? (for those interested)
-- Page loads and a user can choose thier region and enter their summoner name
+- Page loads and a user can choose their region and enter their summoner name
 - This info is sent via a HTTP request through Angular to the PHP-written internal API
 - The API routes the request according to the endpoint (eg. "api/v1/user/goevo")
 - The API then connects to the Riot API and looks up the user's info including ID
@@ -82,7 +82,7 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 - Based on the information available, the champion is put in an array according to if they have a chest, played, etc.
 - A JSON response is prepared and returned to the javascript code that requested it
 - The data is parsed and injected into the HTML via Angular
-- If an error occured (eg. the summoner does not exist), it is shown to the user instead
+- If an error occurred (eg. the summoner does not exist), it is shown to the user instead
 
 ### Example of some of the Logic (for those interested)
 ```
