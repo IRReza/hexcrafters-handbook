@@ -30,7 +30,6 @@ I've found this to be a great tool for when you're in champ select and you want 
 ## Additional Features
 Additional features include:
 - Progress bar showing earned chests/max chests
-- Tracking of available chests
 - Filter your best champs to play by position (useful when you're in draft mode)
 - Regional search support
 - Error reporting
@@ -69,11 +68,9 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 
 ## Features Behind the Scenes
 - Error catching and error reporting
-- Implemented a server API (just for this website) to convienently access data, provide scalability and versioning, and keep keys and database info secure
 - Using Angluar JS and Bootstrap frameworks
-- Clean and documented code
 - AJAX loading, single-page design, and clean URLs
-- My best attempt at good-practices OOP code
+- My best attempt at good-practices OOP, clean and documented code
 
 ## What Happens When Someone Uses the Site? (for those interested)
 - Page loads and a user can choose thier region and enter their summoner name
@@ -87,7 +84,7 @@ Quite possibly! There is only so much data that is available. Your stats (wins, 
 - The data is parsed and injected into the HTML via Angular
 - If an error occured (eg. the summoner does not exist), it is shown to the user instead
 
-### Some of the Logic
+### Example of some of the Logic (for those interested)
 ```
 for each champ
     initialize points
