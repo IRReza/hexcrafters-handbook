@@ -1,0 +1,370 @@
+<!-- Copyright 2016 goevo
+     Developed for the Riot 2016 API challenge.
+     Please enjoy reading the code as an example, but ask permission to copy
+=====================================-->
+
+<html lang="en" ng-app="hexcrafting-app">
+
+<head>
+    <title>Hexcrafters Handbook</title>
+    <meta name="description" content="Hexcrafters Handbook is the League of Legends tool for Hextech Crafting. Optimize your earning of Hextech Chests and keep track of progress.">
+    <meta name="keywords" content="League of Legends, League, LoL, Hextech, Crafting, Chest, Box, Key, Skin, Unlock, Champion, Summoner, Game, MOBA">
+    <meta charset="utf-8">
+    <meta name="author" content="Goevo">
+
+    <!-- Load Core CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/core/bootstrap.min.css">
+
+    <!-- Load Main CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/main/main.css">
+
+    <!-- Load fonts/icons
+        =====================================-->   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top" ng-controller='hextroller as c'>
+
+    <!-- Navigation Area
+        ===================================== -->
+    <nav class="navbar navbar-hexcrafter navbar-mp navbar-standart navbar-fixed-top top-nav-collapse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#">Hexcrafters Handbook</a>
+            </div>
+
+            <div class="navbar-collapse collapse navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#stats" class="color-light">Handbook </a></li>
+                    <li><a href="#best" class="color-light">Best Champs </a> </li>
+                    <li><a href="#carried" class="color-light">Get Carried  </a></li>
+                    <li><a href="#earned" class="color-light">Earned </a></li>
+                    <li><a href="#unowned" class="color-light">Never Played </a></li>
+                    <li><a href="#faq" class="color-light">FAQ </a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#searchModal"><i class="fa fa-search fa-fw color-hexcrafter"></i></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Search Modal Dialog Box
+        ===================================== -->
+    <div id="searchModal" class="modal fade" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-gray">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title text-center"><i class="fa fa-search fa-fw"></i> Search here</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="inline-form" ng-submit="c.search()">
+                        <input type="text" class="modal-search-input" ng-model="c.summoner" autofocus="">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Welcome Area
+        ===================================== -->
+    <section id="welcome">
+        <div class="container mt50">
+            <div class="row mt50">
+                <div class="col-md-3 col-sm-3 chest-icon">
+                    <img src="assets/img/chest-large.png" />
+                </div>
+
+                <div class="col-md-9 col-sm-9 text-justify" ng-show="c.isFirstLoad">
+                    <h4 class="mt25 color-dark">
+                        Welcome to the Hexcrafter's Handbook!
+                    </h4>
+                    Hit that big juicy red button below and we'll hook you up with your Hextech Crafting stats. We'll let you know how many chests you're on track for getting by the end of the season and the best champions you should play to get those chests.<br />
+                    <button id="search-open" class="button-3d button-md button-hexcrafter mt20 center-block" data-toggle="modal" data-target="#searchModal">Get Started<i class="fa fa-search"></i></button>
+                    <div class="regions">
+                        <ul>
+                            <li ng-repeat="region in c.regions" ng-class="{'color-hexcrafter':c.isRegion(region.code)}" ng-click="c.setRegion(region.code)">{{region.name}}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-9 col-sm-9 text-justify" ng-hide="c.isFirstLoad">
+                    <h4 class="mt25 color-dark">
+                        Welcome to the Hexcrafter's Handbook!
+                    </h4>
+                    Check out your Hexcrafting stats below and the best champions you should play to get more chests! There are categories for champs you've already got chests with, ones you really don't play... and the best champs to get a chest with if you know your duo partner is gonna teach the other team a lession (i.e. they are gonna get the "S" for you!)   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stats Area
+        ===================================== -->
+    <div id="stats" class="pt25 pb25" ng-hide="c.isFirstLoad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-uppercase font-montserrat color-dark heading-main">Summoner Stats - {{c.summonerData.summoner.name}}</h4>
+                    <hr />
+                </div>
+            </div>
+            
+            <div class="row search-loading" ng-show="c.isSearchLoading">
+                <i class="fa fa-spinner fa-4x fa-spin"></i>
+            </div>
+            
+            <div class="row search-error" ng-show="c.isError">
+                Oops, something didn't go quite right...
+                <div class="error-message">{{c.searchErrorMessage}}</div>
+            </div>
+            
+            <div class="row" ng-hide="c.isSearchLoading || c.isError">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <h5 class="font-montserrat color-dark">Total Season Chest Progess</h5>
+                        <div class="progress progress-xs">
+                            <style parse-style>.progress-value {width: {{c.summonerData.percent}}%;}</style>
+                            <div class="progress-bar bg-hexcrafter progress-value" role="progressbar"></div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center mt30">
+                        <span class="icon-mobile el-icon3x color-hexcrafter mt30"></span>
+                        <div class="fact">                            
+                            <div class="fact-number timer" data-perc="95">
+                                <span class="factor">{{c.summonerData.chestsEarned}}</span>
+                            </div>                                    
+                            <span class="fact-title">Earned Chests</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center mt30">
+                        <span class="icon-happy el-icon3x color-hexcrafter mt30"></span>
+                        <div class="fact">                                    
+                            <div class="fact-number timer" data-perc="540">
+                                <span class="factor">{{c.summonerData.maxChests}}</span>
+                            </div>                                    
+                            <span class="fact-title">Max Chests This Season</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center mt30">
+                        <span class="icon-download el-icon3x color-hexcrafter mt30"></span>
+                        <div class="fact">                                    
+                            <div class="fact-number timer" data-perc="950">
+                                <span class="factor">{{c.summonerData.onTrack}}</span>
+                            </div>                                    
+                            <span class="fact-title">On Track For</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center mt30">
+                        <span class="icon-briefcase el-icon3x color-hexcrafter mt30"></span>
+                        <div class="fact">                                    
+                            <div class="fact-number timer" data-perc="475">
+                                <span class="factor">{{c.summonerData.summoner.masteryScore}}</span>
+                            </div>                                    
+                            <span class="fact-title">Total Champion Mastery</span>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        </div>
+
+    <div class="container" id="best" ng-hide="c.isSearchLoading || c.isError || c.isFirstLoad">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase font-montserrat color-dark heading-main">Best Champs</h4>
+                <small class="heading-desc">
+                    These are the champs you have the best chance of getting a chest with. Not only are you good at them, but you make enemies rage - all the better when going for that "S"! We take into account your best mastery grade, wins/losses, champion mastery level, and how often you get triple, quadra, and penta kills!
+                </small>
+                <div class="positions">
+                        <ul>
+                            <li ng-repeat="position in c.positions" ng-class="{'color-hexcrafter':c.isPosition(position)}" ng-click="c.setPosition(position)">{{position}}</li>
+                        </ul>
+                    </div>
+                <hr />
+            </div>
+        </div>
+
+        <div class="mb50 container">
+            <div class="champ-block" ng-repeat="champion in c.summonerData.champions.perspective | orderBy:'-championScore' | filter:(!(c.currentPosition == 'All') || '') && {positions:c.currentPosition}">
+                <div class="champ-img"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image}}" /></div>
+                <div class="champ-name fact-title">{{champion.name}}</div>
+                <div class="champ-name fact-title">Best: {{champion.highestGrade}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="carried" ng-hide="c.isSearchLoading || c.isError || c.isFirstLoad">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase font-montserrat color-dark heading-main">Get Carried</h4>
+                <small class="heading-desc">
+                    When you're in that duo/multi Q and you know you're friend has got you covered, play these champs. Let them do the heavy lifting... aint no shame! 
+                </small>
+                <hr />
+            </div>
+        </div>
+
+        <div class="mb50 container">
+            <div class="champ-block" ng-repeat="champion in c.summonerData.champions.perspective | orderBy:'-championCarryScore'">
+                <div class="champ-img"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image}}" /></div>
+                <div class="champ-name fact-title">{{champion.name}}</div>
+                <div class="champ-name fact-title">Best: {{champion.highestGrade}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="earned" ng-hide="c.isSearchLoading || c.isError || c.isFirstLoad">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase font-montserrat color-dark heading-main">Earned Chests</h4>
+                <small class="heading-desc">
+                    Nice work! You've already earned chests with these champs
+                </small>
+                <hr />
+            </div>
+        </div>
+
+        <div class="mb50 container">
+            <div class="champ-block" ng-repeat="champion in c.summonerData.champions.earned | orderBy:'name'">
+                <div class="champ-img"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image}}" /></div>
+                <div class="champ-name fact-title">{{champion.name}}</div>
+                <div class="champ-name fact-title">Best: {{champion.highestGrade}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="unowned" ng-hide="c.isSearchLoading || c.isError || c.isFirstLoad">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase font-montserrat color-dark heading-main">Champions You've Never Played</h4>
+                <hr />
+            </div>
+        </div>
+
+        <div class="mb50 container">
+            <div class="champ-block" ng-repeat="champion in c.summonerData.champions.unplayed | orderBy:'name'">
+                <div class="champ-img"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image}}" /></div>
+                <div class="champ-name fact-title">{{champion.name}}</div>
+                <div class="champ-name fact-title">Best: {{champion.highestGrade}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="faq">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase font-montserrat color-dark">Frequently Asked Questions: The handbook, earning chests, getting keys</h4>
+                <hr />
+                How does the Hexcrafter's Handbook work?
+                <p>We get data about your account from Riot's API and analyze it to determine the champions you have the best chance of getting an "S" and a win with</p>
+                But how exactly do you calculate it?
+                <p>We come up with a score and ranking based on:</p>
+                <ul>
+                    <li>P1 - Win percentage</li>
+                    <li>P2 - How often you get multi-kills (triple or higher)</li>
+                    <li>P3 - Your highest mastery grade (A+, S, etc.)</li>
+                    <li>P4 - Your champion mastery level (1 to 5)</li>
+                </ul>
+                <p>To get a perfect score with a champion (which, by the way, is hidden anyhow... and its all relative) you would need to: have a win ratio 70% or higher; get a Penta kill every 6 games, a Quadra every 4 games, and a Triple 2nd game; have got an "S+" with that champion at some point; have a level 5 champion mastery. Unlikely, but keep in mind this is an upper limit for our ranking scale! The multi-kill points have generally lower impact... because otherwise Master Yi would be at the top of everyone's list! And we know you support mains would have none of that!<br>The "get carried" section is purely based on your win percentage.</p>
+                I've definitely played some of those champs...
+                <p>Quite possibly! There is only so much data that is available. Your stats (wins, losses, penta kills, etc.) are only calculated for ranked games and for this season. You may have also played champions before Riot implemented the Mastery system - in which case your profile may not have any mastery data associated.</p>
+                To earn a chest, you must...
+                <ul>
+                    <li>Own the champion you're playing</li>
+                    <li>Either get an S-, S, or S+ rating yourself, or have someone in your pre-made get it</li>
+                    <li>Have not previously got a chest with that champion this season (<i>check your above list of eligible champions</i>)</li>
+                    <li>Have a chest available (<i>check the number of chest you have available above</i>)</li>
+                    <li>Not have any restrictions placed on your account by riot</li>
+                    <li>Not have left the game you were playing to earn the chest</li>
+                </ul>
+                To earn a key, you must...
+                <ul>
+                <li>Win your game</li>
+                    <li>Be playing a matchmade game (like ranked, normal, &amp; aram)</li>
+                    <li>Get lucky</li>
+                </ul>
+                So, how do I get lucky with keys?...
+                <ul>
+                <li>Keys drop randomly</li>
+                    <li>The drop rate exponentially decreases, so you earn a lot of keys (almost every game) at the start, then quickly earn keys very sparsly</li>
+                    <li>The drop rate curve resets every 30 days, so when it resets, you'll start earning a lot of keys again (for a few games atleast)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+    <!-- Footer Area
+        =====================================-->
+    <footer id="footer" class="footer-one center-block bg-gray pt50 pb25 ">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-xs-12 text-center">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="bb-solid-1">
+                                <li><a href="#stats">Handbook </a></li>
+                                <li><a href="#best">Best Champs </a> </li>
+                                <li><a href="#carried">Get Carried  </a></li>
+                                <li><a href="#earned">Earned </a></li>
+                                <li><a href="#unowned">Never Played </a></li>
+                                <li><a href="#faq">FAQ </a></li>
+                                <li><a href="legal.txt">Legal </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-xs-12">
+                    <div class="social-container">
+                        <ul class="footer-social text-center">
+                            <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+        
+    <!-- JQuery Core
+        =====================================-->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- AngularJS Core
+        =====================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
+
+    <!-- Main
+        =====================================-->
+    <script src="assets/js/main/app.js"></script>
+
+</body>
+
+</html>

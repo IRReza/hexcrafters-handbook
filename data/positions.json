@@ -1,0 +1,652 @@
+{
+    "Aatrox": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Thresh": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Tryndamere": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Gragas": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "AurelionSol": {
+        "positions": [
+            "Middle", "Jungle", "Top"
+        ]
+    },
+    "Cassiopeia": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Poppy": {
+        "positions": [
+            "Top", "Jungle", "Support"
+        ]
+    },
+    "Ryze": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Sion": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Annie": {
+        "positions": [
+            "Middle", "Support"
+        ]
+    },
+    "Jhin": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Nautilus": {
+        "positions": [
+            "Support", "Jungle"
+        ]
+    },
+    "Karma": {
+        "positions": [
+            "Middle", "Top", "Support"
+        ]
+    },
+    "Lux": {
+        "positions": [
+            "Middle", "Support"
+        ]
+    },
+    "Ahri": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Olaf": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Viktor": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Singed": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Garen": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Anivia": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Maokai": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Lissandra": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Morgana": {
+        "positions": [
+            "Middle", "Support"
+        ]
+    },
+    "Evelynn": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Fizz": {
+        "positions": [
+            "Middle", "Jungle", "Top"
+        ]
+    },
+    "Heimerdinger": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Zed": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Rumble": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Mordekaiser": {
+        "positions": [
+            "Top", "Jungle", "Middle"
+        ]
+    },
+    "Sona": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Katarina": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "KogMaw": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Ashe": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Lulu": {
+        "positions": [
+            "Support", "Middle", "Top"
+        ]
+    },
+    "Karthus": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Alistar": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Darius": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Vayne": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Udyr": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Varus": {
+        "positions": [
+            "ADC", "Middle"
+        ]
+    },
+    "Jayce": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Leona": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Syndra": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Pantheon": {
+        "positions": [
+            "Top", "Jungle", "Middle"
+        ]
+    },
+    "Khazix": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Riven": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Corki": {
+        "positions": [
+            "ADC", "Middle"
+        ]
+    },
+    "Caitlyn": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Azir": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Nidalee": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Kennen": {
+        "positions": [
+            "Top", "Middle", "Support"
+        ]
+    },
+    "Galio": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Veigar": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Bard": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Gnar": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Malzahar": {
+        "positions": [
+            "Middle", "Jungle"
+        ]
+    },
+    "Graves": {
+        "positions": [
+            "Top", "Jungle", "ADC"
+        ]
+    },
+    "Vi": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Kayle": {
+        "positions": [
+            "Top", "Middle", "Jungle"
+        ]
+    },
+    "Irelia": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "LeeSin": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Illaoi": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Elise": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Volibear": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Nunu": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "TwistedFate": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Jax": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Shyvana": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Kalista": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "DrMundo": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "TahmKench": {
+        "positions": [
+            "Support", "Top"
+        ]
+    },
+    "Diana": {
+        "positions": [
+            "Middle", "Jungle"
+        ]
+    },
+    "Brand": {
+        "positions": [
+            "Middle", "Support"
+        ]
+    },
+    "Sejuani": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Vladimir": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Zac": {
+        "positions": [
+            "Jungle", "Top"
+        ]
+    },
+    "RekSai": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Quinn": {
+        "positions": [
+            "ADC", "Jungle"
+        ]
+    },
+    "Akali": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Tristana": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Hecarim": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Sivir": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Lucian": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Rengar": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Warwick": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Skarner": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Malphite": {
+        "positions": [
+            "Top", "Support"
+        ]
+    },
+    "Yasuo": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Xerath": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Teemo": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Renekton": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Nasus": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Draven": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Shaco": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Swain": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Janna": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Talon": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Ziggs": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Ekko": {
+        "positions": [
+            "Middle", "Top", "Jungle"
+        ]
+    },
+    "Orianna": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "FiddleSticks": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Fiora": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Chogath": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Rammus": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Leblanc": {
+        "positions": [
+            "Middle"
+        ]
+    },
+    "Soraka": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Zilean": {
+        "positions": [
+            "Support", "Middle"
+        ]
+    },
+    "Nocturne": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Jinx": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "Yorick": {
+        "positions": [
+            "Top"
+        ]
+    },
+    "Urgot": {
+        "positions": [
+            "ADC", "Top"
+        ]
+    },
+    "Kindred": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "MissFortune": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "MonkeyKing": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Blitzcrank": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "Shen": {
+        "positions": [
+            "Support", "Top"
+        ]
+    },
+    "Braum": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "XinZhao": {
+        "positions": [
+            "Jungle", "Top"
+        ]
+    },
+    "Twitch": {
+        "positions": [
+            "ADC"
+        ]
+    },
+    "MasterYi": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Taric": {
+        "positions": [
+            ""
+        ]
+    },
+    "Amumu": {
+        "positions": [
+            "Jungle"
+        ]
+    },
+    "Gangplank": {
+        "positions": [
+            "Top", "Middle"
+        ]
+    },
+    "Trundle": {
+        "positions": [
+            "Top", "Support"
+        ]
+    },
+    "Kassadin": {
+        "positions": [
+            "Middle", "Top"
+        ]
+    },
+    "Velkoz": {
+        "positions": [
+            "Middle", "Support"
+        ]
+    },
+    "Zyra": {
+        "positions": [
+            "Support", "Middle"
+        ]
+    },
+    "Nami": {
+        "positions": [
+            "Support"
+        ]
+    },
+    "JarvanIV": {
+        "positions": [
+            "Top", "Jungle"
+        ]
+    },
+    "Ezreal": {
+        "positions": [
+            "ADC"
+        ]
+    }
+}
