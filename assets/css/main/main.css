@@ -598,7 +598,7 @@ OTHER
 }
 
 #faq ul {
-    margin: 10px 0px 15px 30px;
+    margin: 10px 0px 10px 30px;
 }
 
 #faq {
@@ -636,11 +636,13 @@ hr {
     color: darkred;
 }
 
-.regions, .positions {
+.regions,
+.positions {
     margin-top: 20px;
 }
 
-.regions ul li, .positions ul li {
+.regions ul li,
+.positions ul li {
     display: inline;
     margin-left: 10px;
     padding: 2px 6px;
@@ -648,11 +650,13 @@ hr {
     border-radius: 5px;
 }
 
-.regions ul li:first-child, .positions ul li:first-child {
+.regions ul li:first-child,
+.positions ul li:first-child {
     margin-left: 0;
 }
 
-.regions ul li:hover, .positions ul li:hover {
+.regions ul li:hover,
+.positions ul li:hover {
     cursor: pointer;
 }
 
@@ -680,4 +684,24 @@ hr {
 
 .ask-chests {
     padding-top: 5px;
+}
+
+.panel-body {
+    font-size: 13px;
+}
+
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0px;
+}
+
+.panel-light {
+    border: 1px solid #ebebeb;
+}
+
+.container:before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
 }
